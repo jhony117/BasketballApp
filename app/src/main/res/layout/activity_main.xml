@@ -36,7 +36,7 @@
             app:layout_constraintStart_toStartOf="@+id/add_1_L" />
 
         <Button
-            android:id="@+id/Results"
+            android:id="@+id/results"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -90,7 +90,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Results"
+            app:layout_constraintEnd_toStartOf="@+id/results"
             app:layout_constraintHorizontal_bias="0.543"
             app:layout_constraintStart_toEndOf="@+id/restart"
             app:layout_constraintTop_toTopOf="parent"
@@ -104,7 +104,7 @@
             android:layout_marginStart="28dp"
             android:background="#673AB7"
             app:layout_constraintBottom_toTopOf="@+id/decrease_v"
-            app:layout_constraintEnd_toStartOf="@+id/Results"
+            app:layout_constraintEnd_toStartOf="@+id/results"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/decrease_L"

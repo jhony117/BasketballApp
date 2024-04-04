@@ -1,5 +1,6 @@
 package com.example.basketballapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -43,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         binding.add1L.setOnClickListener(v -> {
             PUNTUACION_L += 1 ;
-            binding.scoreL.setText(PUNTUACION_L) ;
+            binding.scoreL.setText(String.valueOf(PUNTUACION_L)) ;
         });
         binding.add2L.setOnClickListener(v -> {
             PUNTUACION_L += 2 ;
-            binding.scoreL.setText(PUNTUACION_L) ;
+            binding.scoreL.setText(String.valueOf(PUNTUACION_L)) ;
         });
         binding.decreaseL.setOnClickListener(v -> {
             PUNTUACION_L -= 1 ;
@@ -62,31 +63,37 @@ public class MainActivity extends AppCompatActivity {
             binding.scoreL.setText(String.valueOf((PUNTUACION_L)));
         });
 
+        binding.results.setOnClickListener(v -> {
+               Intent intent = new Intent(this, Resultados.class);
+               intent.putExtra(Resultados.LOCAL, String.valueOf(PUNTUACION_L));
+               intent.putExtra(Resultados.VISITANTE, String.valueOf(PUNTUACION_V));
+              startActivity(intent);
+        });
 
         binding.add1V.setOnClickListener(v -> {
             PUNTUACION_V += 1;
             binding.scoreV.setText(String.valueOf(PUNTUACION_V));
             menorPuntuacionV();
         });
-        binding.add2L.setOnClickListener(v -> {
+        binding.add2V.setOnClickListener(v -> {
             PUNTUACION_V += 2 ;
             binding.scoreV.setText(String.valueOf((PUNTUACION_V)));
         });
         binding.decreaseV.setOnClickListener(v -> {
             PUNTUACION_V -= 1 ;
             binding.scoreV.setText(String.valueOf((PUNTUACION_V)));
-            menorPuntuacionL();
+            menorPuntuacionV();
         });
 
 
     }
     public void  menorPuntuacionV() {
-        if(PUNTUACION_V < 0){
+        if(PUNTUACION_V < 1){
             PUNTUACION_V = 0;
         }
     }
     public void  menorPuntuacionL() {
-        if(PUNTUACION_L < 0){
+        if(PUNTUACION_L < 1){
             PUNTUACION_L = 0;
         }
     }

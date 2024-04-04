@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BasketballApp</string>
+    <string name="local_visitante">Local - Visitante</string>
 </resources>
